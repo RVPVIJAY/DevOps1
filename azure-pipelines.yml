@@ -13,6 +13,7 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
+
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
@@ -20,7 +21,14 @@ steps:
 
 - task: HCLAppScanOnCloud@2
   inputs:
-    AppSecTestService: 'ASOCEUslash'
-    applications: '933df736-99b5-44ae-b2c1-7e28b0b3481d'
-    scanname: 'test'
-    scantype: 'static'
+    AppSecTestService: 'ASOCEUDC'
+    applications: '63912b7a-bdef-4985-8dda-4c117fd9e2e3'
+    scanname: 'DASTTest'
+    scantype: 'dynamic'
+    dynamicType: 'DAST'
+    scanURL: 'https://demo.testfire.net'
+    loginMethod: 'Required'
+    dynamicuser: 'JSmith'
+    dynamicloginpassword: 'Demo1234'
+    network: 'public'
+    intervention: false
